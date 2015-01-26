@@ -3,6 +3,9 @@
 	<h1><%= place.name %></h1>
 	<i><%= place.description %></i>
 	<p><%= place.address %></p>
+	<% if place.user.present? %>
+		<small><%= place.user.email %></small>
+	<% end %>
   </div>
 <% end %>
 <%= will_paginate @places, :class => 'pagination-div col-xs-8 col-xs-offset-2' %>
