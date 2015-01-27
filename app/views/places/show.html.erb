@@ -30,6 +30,15 @@
 	  <div id="map-canvas"></div>
 	<% end %>
 	<br />
+
+	<div class="pull-left"
+		<!-- Button trigger modal -->
+		<button class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+		  Add Comment
+		</button>
+	</div>
+
+
 	<div class="pull-right">
 		<% if current_user && @place.user == current_user %>
 			<%= link_to 'Edit', edit_place_path(@place), :class => 'btn btn-primary' %>
@@ -37,10 +46,11 @@
 		<% end %>
 	</div>
 
-	<h1>Comments</h1>
+	<div class="clear"></div>
 
+	
 	<% @place.comments.each do |comment| %>
-		<div>
+		<div class="col-xs-12 col-sm-6">
 			<blockquote>
 				<% if comment.humanized_rating.present? %>
 					<b><%= comment.humanized_rating %></b> - 
@@ -49,16 +59,13 @@
 				<small><%= comment.user.email %></small>
 
 			</blockquote>
+		</div>
 	<% end %>
 
 	<div class='clear'></div>
 	
-
-	<!-- Button trigger modal -->
-	<button class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-	  Add Comment
-	</button>
-
+	
+	
 	<!-- Modal -->
 	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	  <div class="modal-dialog">
