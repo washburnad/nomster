@@ -70,6 +70,7 @@
 
 	<% @place.photos.each do |photo| %>
 		<div class="col-xs-4 col-sm-3 col-md-2">
+			<%= image_tag photo.picture, :class => 'image-thumbnail' %>
 			<%= photo.caption %>
 		</div>
 	<% end %>	
@@ -112,12 +113,13 @@
 	      <%= simple_form_for @photo, :url => place_photos_path(@place) do |f| %>
 	      	<div class="modal-body">
 	      		<%= f.input :caption %>
+	      		<%= f.input :picture %>
 	      		<br />
 	      		
 	      	</div>
 		      <div class="modal-footer">
 		        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-		        <%= f.submit 'Submit Comment', :class => 'btn btn-primary' %>
+		        <%= f.submit 'Submit Image', :class => 'btn btn-primary' %>
 		      </div>
 	      <% end %> 
 	    </div>
