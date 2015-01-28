@@ -77,9 +77,13 @@ blockquote p {
   display: inline;
 }
 
+.thumbnail-box {
+  height: 150px;
+  overflow: hidden;
+}
+
 .image-thumbnail {
   width: 100%;
   max-width: 150px;
-  max-height: 150px;
 }
 

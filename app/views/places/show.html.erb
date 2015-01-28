@@ -70,12 +70,15 @@
 
 	<% @place.photos.each do |photo| %>
 		<div class="col-xs-4 col-sm-3 col-md-2">
-			<%= image_tag photo.picture, :class => 'image-thumbnail' %>
+			<div class="thumbnail-box">
+				<%= image_tag photo.picture, :class => 'image-thumbnail' %>
+			</div>
 			<%= photo.caption %>
+			<br /><br />
 		</div>
 	<% end %>	
 	
-	
+	<div class="clear"></div>
 	
 	<!-- Comment Modal -->
 	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
