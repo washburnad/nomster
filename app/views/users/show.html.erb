@@ -1,1 +1,5 @@
-<h1> user show </h2>
+<h1><%= @user.email %></h1>
+<h3>User since <%= @user.created_at.strftime("%B %Y") %></h3>
+<h4><%= comments_count=@user.comments.count %> <%= 'comment'.pluralize(comments_count) %> left</h4>
+<h4><%= five_star_count=@user.comments.where(:rating => '5_starts').count %> 5-star <%= 'rating'.pluralize(five_star_count) %> given</h4>
+<h4><%= places_count=@user.places.count %> <%= 'place'.pluralize(places_count) %> created</h4>
